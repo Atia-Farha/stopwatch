@@ -13,6 +13,6 @@ A sleek and functional online stopwatch with lap time recording and animated dis
 Clone the repository and open `index.html` in your browser.
 
 ```bash
-git clone https://github.com/yourusername/stopwatch-website.git
+git clone https://github.com/atia-farha/stopwatch-website.git
 cd stopwatch-website/src
 open index.html
