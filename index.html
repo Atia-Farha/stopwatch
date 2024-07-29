@@ -1,28 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>Stopwatch</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stopwatch</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="StopWatch">
+    <meta property="og:description"
+        content="Check out this sleek and functional online stopwatch with lap time recording and animated display. Perfect for timing events, workouts, and more! | © Designed and developed by Atia Farha">
+    <meta property="og:image" content="preview.png">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js" defer></script>
+    <!-- Font Awesome icons for the buttons -->
     <script src="https://kit.fontawesome.com/7d71963023.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="stopwatch">
-        <div class="circle">
+
+    <!-- Display area for the stopwatch -->
+    <div class="display">
+        <div class="circle" id="circle">
             <span id="time">00.00</span>
         </div>
-        <div class="buttons">
-            <button id="start" onclick="startStopwatch()">
-                <i class="fa-solid fa-circle-play fa-beat-fade" style="color: #B197FC;"></i>
-            </button>
-            <button id="lap" onclick="lapTime()" style="display:none;">Lap</button>
-            <button id="stop" onclick="stopStopwatch()" style="display:none;">Stop</button>
-            <button id="resume" onclick="resumeStopwatch()" style="display:none;">Resume</button>
-            <button id="reset" onclick="resetStopwatch()" style="display:none;">Reset</button>
-        </div>
-        <div id="laps" class="laps" style="display:none;"></div>
     </div>
+
+    <!-- Area for lap times -->
+    <hr id="line3">
+    <div id="lapsBox" class="lapsBox">
+        <hr id="line1">
+        <div id="laps" class="laps" style="display:none;"></div>
+        <hr id="line2">
+    </div>
+    <hr id="line4">
+
+    <!-- Buttons for controlling the stopwatch -->
+    <div class="buttons">
+        <button id="lap" onclick="lapTime()" style="display:none;">
+            <i class="fa-regular fa-flag fa-2x" style="color: rgb(169, 83, 255);"></i>
+        </button>
+        <button id="start" onclick="startStopwatch()">
+            <i class="fa-solid fa-circle-play fa-4x" style="color: rgb(169, 83, 255);"></i>
+        </button>
+        <button id="stop" onclick="stopStopwatch()" style="display:none;">
+            <i class="fa-solid fa-circle-pause fa-4x" style="color: rgb(169, 83, 255);"></i>
+        </button>
+        <button id="reset" onclick="resetStopwatch()" style="display:none;">
+            <i class="fa-solid fa-rotate-right fa-2x" style="color: rgb(169, 83, 255);"></i>
+        </button>
+    </div>
+
 </body>
+
 </html>
