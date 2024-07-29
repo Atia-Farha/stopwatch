@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/7d71963023.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="stopwatch">
+        <div class="circle">
+            <span id="time">00.00</span>
+        </div>
+        <div class="buttons">
+            <button id="start" onclick="startStopwatch()">
+                <i class="fa-solid fa-circle-play fa-beat-fade" style="color: #B197FC;"></i>
+            </button>
+            <button id="lap" onclick="lapTime()" style="display:none;">Lap</button>
+            <button id="stop" onclick="stopStopwatch()" style="display:none;">Stop</button>
+            <button id="resume" onclick="resumeStopwatch()" style="display:none;">Resume</button>
+            <button id="reset" onclick="resetStopwatch()" style="display:none;">Reset</button>
+        </div>
+        <div id="laps" class="laps" style="display:none;"></div>
+    </div>
+</body>
+</html>
