@@ -1,73 +1,138 @@
+/* Overall body styling */
 body {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(25, 25, 25);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Styling for the display area */
+.display {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  margin: 3em 1em 2em 1em;
 }
 
-.stopwatch {
-  text-align: center;
-}
-
+/* Styling for the stopwatch circle */
 .circle {
-  width: 200px;
-  height: 200px;
+  width: 70vw;
+  height: 70vw;
+  max-width: 16em;
+  max-height: 16em;
   border-radius: 50%;
   background-color: #4CAF50;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(25, 25, 25);
+  box-shadow: 0 0 90px rgba(146, 0, 225, 0.85);
 }
 
+/* Styling for the time digits */
 .circle #time {
-  font-size: 2em;
+  font-size: clamp(8px, 9vw, 35px);
   color: #fff;
 }
 
-.buttons button {
-  font-size: 1em;
-  padding: 10px 20px;
-  margin: 5px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* Animation for the stopwatch circle */
+.circle.animate {
+  animation: boxShadowAnimation 3s infinite;
 }
 
-#start {
-  background-color: #4CAF50;
-  color: white;
+/* Keyframes for the box shadow animation */
+@keyframes boxShadowAnimation {
+  0% {
+    box-shadow: 0 0 90px rgba(146, 0, 225, 0.85);
+  }
+
+  50% {
+    box-shadow: 0 0 15px rgba(146, 0, 225, 0.85);
+  }
+
+  100% {
+    box-shadow: 0 0 90px rgba(146, 0, 225, 0.85);
+  }
 }
 
-#stop, #resume, #lap {
-  background-color: #f44336;
-  color: white;
+/* Styling for horizontal lines */
+hr {
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 99%;
+  border-color: #444444;
 }
 
-#reset {
-  background-color: #9E9E9E;
-  color: white;
-}
-
-.laps {
-  margin-top: 20px;
-  text-align: left;
-  max-height: 200px;
+/* Container for lap times */
+.lapsBox {
+  display: none;
+  width: 100vw;
   overflow-y: auto;
-  width: 200px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  border-radius: 2px;
+  text-align: center;
+  position: relative;
 }
 
+/* Gradient effect for laps box when it overflows */
+.lapsBox.with-gradient::after {
+  content: '';
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to top, rgba(25, 25, 25, 1), transparent);
+  pointer-events: none;
+  display: block;
+  z-index: 1;
+}
+
+/* Styling for each lap time */
 .laps div {
-  background-color: #e0e0e0;
-  padding: 5px;
-  margin: 5px 0;
-  border-radius: 5px;
+  background-color: #333333;
+  color: white;
+  padding: 10px;
+  margin: 0 4vw 0 4vw;
+  border-bottom: 1px solid rgb(25, 25, 25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.lapCounter,
+.lapTime {
+  display: inline-block;
+  align-items: center;
+}
+
+/* Styling for the buttons container */
+.buttons {
+  margin: 1em 1em 2em 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+
+/* Styling for buttons */
+.buttons button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
 }
