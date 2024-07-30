@@ -1,18 +1,43 @@
-# Stopwatch Website
+# Stopwatch
 
-A sleek and functional online stopwatch with lap time recording and animated display.
+A sleek and functional online stopwatch with lap time recording and animated display. Perfect for timing events, workouts, and more.
 
 ## Features
 
-- Start, stop, and reset the stopwatch
-- Record lap times
-- Animated display
+- **Start, Stop, Reset:** Control the stopwatch with intuitive buttons.
+- **Lap Times:** Record multiple lap times.
+- **Animated Display:** Visual feedback with animation effects.
 
-## Installation
+## Technologies Used
 
-Clone the repository and open `index.html` in your browser.
+- HTML
+- CSS
+- JavaScript
 
-```bash
-git clone https://github.com/atia-farha/stopwatch-website.git
-cd stopwatch-website/src
-open index.html
+## How to Use
+
+1. Open `index.html` in your web browser.
+2. Click the start button to begin timing.
+3. Click the lap button to record lap times.
+4. Click the stop button to stop the timer.
+5. Click the reset button to reset the stopwatch.
+
+## Preview
+
+![Preview](assets/preview.png)
+
+## Project Structure
+
+```plaintext
+stopwatch/
+├── index.html        # Main HTML file
+├── style.css         # CSS styles
+├── script.js         # JavaScript functionality
+├── assets/           # Asset files
+│   ├── preview.png   # Preview image
+│   ├── favicon.png   # Favicon
+└── README.md         # Project documentation
+
+## License
+
+This project is licensed under the MIT License.
