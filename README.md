@@ -37,3 +37,7 @@ stopwatch/
 ├── favicon.png       # Favicon
 └── README.md         # Project documentation
 ```
+
+## Copyright
+
+© Designed and developed by Atia Farha | All rights reserved
