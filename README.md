@@ -37,6 +37,7 @@ stopwatch/
 │   ├── preview.png   # Preview image
 │   ├── favicon.png   # Favicon
 └── README.md         # Project documentation
+```
 
 ## License
 
