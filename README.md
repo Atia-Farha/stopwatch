@@ -24,7 +24,7 @@ A sleek and functional online stopwatch with lap time recording and animated dis
 
 ## Preview
 
-![Preview](assets/preview.png)
+![Preview](preview.png)
 
 ## Project Structure
 
@@ -33,9 +33,8 @@ stopwatch/
 ├── index.html        # Main HTML file
 ├── style.css         # CSS styles
 ├── script.js         # JavaScript functionality
-├── assets/           # Asset files
-│   ├── preview.png   # Preview image
-│   ├── favicon.png   # Favicon
+├── preview.png       # Preview image
+├── favicon.png       # Favicon
 └── README.md         # Project documentation
 ```
 
