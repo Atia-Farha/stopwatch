@@ -1,4 +1,4 @@
-# Stopwatch Website
+# Stopwatch
 
 A minimalistic and functional online stopwatch with lap time recording and an animated display. Perfect for timing events, workouts, and more. 
 
@@ -32,7 +32,7 @@ A minimalistic and functional online stopwatch with lap time recording and an an
 ## Project Structure
 
 ```plaintext
-stopwatch-website/
+stopwatch/
 ├── src/                  # Source files
 │   ├── index.html        # Main HTML file
 │   ├── style.css         # CSS styles
