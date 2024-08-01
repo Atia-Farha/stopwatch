@@ -6,7 +6,7 @@ A minimalistic and functional online stopwatch with lap time recording and an an
 
 ## Table of Contents
 
-- [Feature](#feature)
+- [Features](#features)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
@@ -33,15 +33,15 @@ A minimalistic and functional online stopwatch with lap time recording and an an
 
 ```plaintext
 stopwatch-website/
-├── src/                                # Source files
-│   ├── index.html              # Main HTML file
-│   ├── style.css                 # CSS styles
-│   └── script.js                  # JavaScript functionality
-├── assets/                        # Asset files
-│   ├── favicon.png          # Favicon
-│   └── preview.png         # Preview image
-├── README.md              # Project documentation
-└── LICENSE                     # License File
+├── src/                  # Source files
+│   ├── index.html        # Main HTML file
+│   ├── style.css         # CSS styles
+│   └── script.js         # JavaScript functionality
+├── assets/               # Asset files
+│   ├── favicon.png       # Favicon
+│   └── preview.png       # Preview image
+├── README.md             # Project documentation
+└── LICENSE               # License File
 ```
 
 ## Technologies Used
