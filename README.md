@@ -2,7 +2,7 @@
 
 A minimalistic and functional online stopwatch with lap time recording and an animated display. Perfect for timing events, workouts, and more. 
 
-![Preview](assets/preview.png)
+![Preview](preview.png)
 
 ## Table of Contents
 
