@@ -56,4 +56,4 @@ stopwatch/
 If you encounter any functional issue, screen adjustment issue, or complaint about the design, please let me know in the 'Issues' section. I will make every effort to fix it as quickly as possible.
 
 
-<p align="center">@ Designed and developed by Atia Farha | ALL RIGHTS RESERVED</p>
+<p align="center">© Designed and developed by Atia Farha | ALL RIGHTS RESERVED</p>
