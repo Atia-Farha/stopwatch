@@ -6,29 +6,11 @@ A minimalistic and functional online stopwatch with lap time recording and an an
 
 ## Table of Contents
 
-- [Features](#features)
-- [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Usage](#usage)
 - [Reporting Issues](#reporting-issues)
-
-## Features
-
-- **Start, Stop, Reset:** Control the stopwatch with intuitive buttons.
-- **Lap Times:** Record multiple lap times.
-- **Animated Display:** Visual feedback with animation effects.
-
-![Preview](/assets/page-preview.png)
-
-## Usage
-
-1. Simply open <a href="https://atia-farha.github.io/stopwatch/" target="_blank">this link</a>
-2. Click the start button to start timing.
-3. Click the lap button to record lap times.
-4. Click the stop button to stop the timer.
-5. Click the reset button to reset the stopwatch.
-
-*Ensure you have installed a web browser (Chrome, Firefox, etc.) on your device.
 
 ## Project Structure
 
@@ -50,6 +32,24 @@ stopwatch/
 - HTML
 - CSS
 - JavaScript
+
+## Features
+
+- **Start, Stop, Reset:** Control the stopwatch with intuitive buttons.
+- **Lap Times:** Record multiple lap times.
+- **Animated Display:** Visual feedback with animation effects.
+
+![Preview](/assets/page-preview.png)
+
+## Usage
+
+1. Simply open <a href="https://atia-farha.github.io/stopwatch/" target="_blank">this link</a>
+2. Click the start button to start timing.
+3. Click the lap button to record lap times.
+4. Click the stop button to stop the timer.
+5. Click the reset button to reset the stopwatch.
+
+*Ensure you have installed a web browser (Chrome, Firefox, etc.) on your device.
 
 ## Reporting Issues
 
