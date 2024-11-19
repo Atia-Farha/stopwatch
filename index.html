@@ -28,7 +28,7 @@
     <!-- Display area for the stopwatch -->
     <div class="display">
         <div class="circle" id="circle">
-            <span class="animate__animated animate__bounceIn animate__slower" id="time">00.00</span>
+            <span class="animate__animated animate__pulse animate__slow" id="time">00.00</span>
         </div>
     </div>
 
@@ -43,7 +43,7 @@
 
     <!-- Buttons for controlling the stopwatch -->
     <div class="buttons">
-        <button class="animate__animated animate__slideInRight" id="lap" onclick="lapTime()" style="display:none;">
+        <button class="animate__animated animate__lightSpeedInRight" id="lap" onclick="lapTime()" style="display:none;">
             <i class="fa-regular fa-flag fa-2x" style="color: rgb(169, 83, 255);"></i>
         </button>
         <button class="animate__animated animate__rotateIn" id="start" onclick="startStopwatch()">
@@ -52,7 +52,7 @@
         <button class="animate__animated animate__rotateIn" id="stop" onclick="stopStopwatch()" style="display:none;">
             <i class="fa-solid fa-circle-pause fa-5x" style="color: rgb(169, 83, 255);"></i>
         </button>
-        <button class="animate__animated animate__slideInLeft" id="reset" onclick="resetStopwatch()" style="display:none;">
+        <button class="animate__animated animate__lightSpeedInLeft" id="reset" onclick="resetStopwatch()" style="display:none;">
             <i class="fa-solid fa-rotate-right fa-2x" style="color: rgb(169, 83, 255);"></i>
         </button>
     </div>
