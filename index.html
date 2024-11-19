@@ -43,16 +43,16 @@
 
     <!-- Buttons for controlling the stopwatch -->
     <div class="buttons">
-        <button id="lap" onclick="lapTime()" style="display:none;">
+        <button class="animate__animated animate__slideInRight" id="lap" onclick="lapTime()" style="display:none;">
             <i class="fa-regular fa-flag fa-2x" style="color: rgb(169, 83, 255);"></i>
         </button>
-        <button class="animate__animated animate__rotateIn" id="start" onclick="startStopwatch()">
+        <button class="animate__animated animate__rotateIn animate__slideInUp" id="start" onclick="startStopwatch()">
             <i class="fa-solid fa-circle-play fa-5x" style="color: rgb(169, 83, 255);"></i>
         </button>
-        <button id="stop" onclick="stopStopwatch()" style="display:none;">
+        <button class="animate__animated animate__rotateIn" id="stop" onclick="stopStopwatch()" style="display:none;">
             <i class="fa-solid fa-circle-pause fa-5x" style="color: rgb(169, 83, 255);"></i>
         </button>
-        <button id="reset" onclick="resetStopwatch()" style="display:none;">
+        <button class="animate__animated animate__slideInLeft" id="reset" onclick="resetStopwatch()" style="display:none;">
             <i class="fa-solid fa-rotate-right fa-2x" style="color: rgb(169, 83, 255);"></i>
         </button>
     </div>
