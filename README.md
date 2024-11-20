@@ -1,6 +1,6 @@
 # Stopwatch Website
 
-A sleek, minimalistic and functional stopwatch with lap time recording and animations with PWA(Progressive Web App) support. Perfect for timing events, workouts, and more. 
+A sleek, minimalistic and functional stopwatch with lap time recording and animations with PWA (Progressive Web App) support. Perfect for timing events, workouts, and more. 
 
 ![Preview](/assets/preview.png)
 
@@ -16,7 +16,7 @@ A sleek, minimalistic and functional stopwatch with lap time recording and anima
 ## Project Structure
 
 ```plaintext
-stopwatch/                 # Root directory
+stopwatch/                  # Root directory
 ├── index.html             # Main HTML file
 ├── src/                   # Source code directory
 │   ├── css/               # Directory for stylesheets
