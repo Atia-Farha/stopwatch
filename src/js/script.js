@@ -94,28 +94,31 @@ function updateTime() {
     document.getElementById('time').textContent = timeString;
 }
 
-let ctrlKeysPressed = new Set();
-
 document.addEventListener('keydown', (event) => {
     const resetButton = document.getElementById('reset');
     const lapButton = document.getElementById('lap');
 
-    // Handle Reset (Enter key) immediately
-    if (event.key === 'Enter') {
-        event.preventDefault(); // Prevent default behavior (e.g., form submission)
-        if (resetButton.style.display !== 'none') {
-            resetStopwatch();
-        }
-    }
+    switch (event.key) {
+        case 'Enter': // Enter key
+            if (resetButton.style.display !== 'none') {
+                resetStopwatch();
+            }
+            break;
 
-    // Handle Lap (Shift key) immediately
-    if (event.key === 'Shift') {
-        if (lapButton.style.display !== 'none') {
-            lapTime();
-        }
-    }
+        case 'Shift': // Shift key
+            if (lapButton.style.display !== 'none') {
+                lapTime();
+            }
+            break;
 
-    // Track Ctrl key presses
+        default:
+            break;
+    }
+});
+
+let ctrlKeysPressed = new Set();
+
+document.addEventListener('keydown', (event) => {
     if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
         ctrlKeysPressed.add(event.code);
     }
@@ -125,12 +128,12 @@ document.addEventListener('keyup', (event) => {
     const startButton = document.getElementById('start');
     const stopButton = document.getElementById('stop');
 
-    // Remove Ctrl keys from the set on release
+    // Remove the key from the set when released
     if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
         ctrlKeysPressed.delete(event.code);
     }
 
-    // Trigger Start/Stop with both Ctrl keys released
+    // Check if both keys were pressed and released
     if (!ctrlKeysPressed.size && (event.code === 'ControlLeft' || event.code === 'ControlRight')) {
         if (startButton.style.display !== 'none') {
             startStopwatch();
@@ -139,7 +142,7 @@ document.addEventListener('keyup', (event) => {
         }
     }
 
-    // Handle Space key for Start/Stop
+    // Handle Space key
     if (event.key === ' ') {
         event.preventDefault(); // Prevent scrolling
         if (startButton.style.display !== 'none') {
