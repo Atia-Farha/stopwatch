@@ -95,23 +95,33 @@ function updateTime() {
 }
 
 document.addEventListener('keydown', (event) => {
+    const startButton = document.getElementById('start');
+    const stopButton = document.getElementById('stop');
+    const resetButton = document.getElementById('reset');
+    const lapButton = document.getElementById('lap');
+
     switch (event.key) {
-        case ' ':
-            event.preventDefault(); // Prevent scrolling
-            if (document.getElementById('start').style.display !== 'none') {
+        case ' ': // Space key
+            event.preventDefault(); // Prevent default browser behavior (e.g., scrolling)
+            if (startButton.style.display !== 'none') {
                 startStopwatch();
-            } else if (document.getElementById('stop').style.display !== 'none') {
+            } else if (stopButton.style.display !== 'none') {
                 stopStopwatch();
             }
             break;
-        case 'Enter':
-            resetStopwatch();
+
+        case 'Enter': // Enter key
+            if (resetButton.style.display !== 'none') {
+                resetStopwatch();
+            }
             break;
-        case 'Shift':
-            if (document.getElementById('lap').style.display !== 'none') {
+
+        case 'Shift': // Shift key
+            if (lapButton.style.display !== 'none') {
                 lapTime();
             }
             break;
+
         default:
             break;
     }
