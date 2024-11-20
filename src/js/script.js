@@ -93,3 +93,26 @@ function updateTime() {
 
     document.getElementById('time').textContent = timeString;
 }
+
+document.addEventListener('keydown', (event) => {
+    switch (event.key) {
+        case ' ':
+            event.preventDefault(); // Prevent scrolling
+            if (document.getElementById('start').style.display !== 'none') {
+                startStopwatch();
+            } else if (document.getElementById('stop').style.display !== 'none') {
+                stopStopwatch();
+            }
+            break;
+        case 'Enter':
+            resetStopwatch();
+            break;
+        case 'Shift':
+            if (document.getElementById('lap').style.display !== 'none') {
+                lapTime();
+            }
+            break;
+        default:
+            break;
+    }
+});
