@@ -1,3 +1,8 @@
+* {
+		margin: 0;
+		padding: 0;
+}
+
 /* Overall body styling */
 body {
   height: 100vh;
@@ -19,7 +24,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 3em 1em 2em 1em;
+  margin: 3.5em 1em 2em 1em;
 }
 
 /* Styling for the stopwatch circle */
