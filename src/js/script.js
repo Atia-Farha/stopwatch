@@ -94,21 +94,24 @@ function updateTime() {
     document.getElementById('time').textContent = timeString;
 }
 
-let spaceKeyHandled = false; // Tracks whether the Space key has already triggered an action
+let activeKeys = new Set(); // Set to track currently pressed keys
 
 document.addEventListener('keydown', (event) => {
     const stopButton = document.getElementById('stop');
     const resetButton = document.getElementById('reset');
     const lapButton = document.getElementById('lap');
 
+    if (activeKeys.has(event.key)) {
+        return; // If the key is already pressed, ignore further actions
+    }
+
+    activeKeys.add(event.key); // Mark the key as active
+
     switch (event.key) {
         case ' ': // Stop button
-            if (!spaceKeyHandled) {
-                spaceKeyHandled = true; // Mark the key press as handled
-                event.preventDefault();
-                if (stopButton.style.display !== 'none') {
-                    stopStopwatch();
-                }
+            event.preventDefault();
+            if (stopButton.style.display !== 'none') {
+                stopStopwatch();
             }
             break;
 
@@ -134,11 +137,16 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('keyup', (event) => {
     const startButton = document.getElementById('start');
 
+    if (!activeKeys.has(event.key)) {
+        return; // If the key was not active, ignore this event
+    }
+
+    activeKeys.delete(event.key); // Remove the key from the active set
+
     if (event.key === ' ') {
         event.preventDefault();
-        if (!spaceKeyHandled && startButton.style.display !== 'none') {
+        if (startButton.style.display !== 'none') {
             startStopwatch();
         }
-        spaceKeyHandled = false; // Reset the flag on key release
     }
 });
