@@ -95,17 +95,14 @@ function updateTime() {
 }
 
 document.addEventListener('keydown', (event) => {
-    const startButton = document.getElementById('start');
     const stopButton = document.getElementById('stop');
     const resetButton = document.getElementById('reset');
     const lapButton = document.getElementById('lap');
 
     switch (event.key) {
-        case ' ': // Space key
-            event.preventDefault(); // Prevent default browser behavior (e.g., scrolling)
-            if (startButton.style.display !== 'none') {
-                startStopwatch();
-            } else if (stopButton.style.display !== 'none') {
+        case ' ':
+            event.preventDefault(); // Prevent scrolling
+            if (stopButton.style.display !== 'none') {
                 stopStopwatch();
             }
             break;
@@ -124,5 +121,13 @@ document.addEventListener('keydown', (event) => {
 
         default:
             break;
+    }
+});
+
+document.addEventListener('keyup', (event) => {
+    const startButton = document.getElementById('start');
+
+    if (event.key === ' ' && startButton.style.display !== 'none') {
+        startStopwatch();
     }
 });
