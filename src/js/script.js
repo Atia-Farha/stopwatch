@@ -109,23 +109,28 @@ document.addEventListener('keyup', (event) => {
     const startButton = document.getElementById('start');
     const stopButton = document.getElementById('stop');
 
-    // Trigger when both Ctrl keys are released simultaneously
-    if (isLeftCtrlPressed && isRightCtrlPressed && event.code === 'ControlRight') {
-        if (startButton.style.display !== 'none') {
-            startStopwatch();
-        } else if (stopButton.style.display !== 'none') {
-            stopStopwatch();
+    // Check if both Ctrl keys were pressed and released
+    if (isLeftCtrlPressed && isRightCtrlPressed) {
+        if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
+            if (startButton.style.display !== 'none') {
+                startStopwatch();
+            } else if (stopButton.style.display !== 'none') {
+                stopStopwatch();
+            }
+            // Reset flags after action
+            isLeftCtrlPressed = false;
+            isRightCtrlPressed = false;
         }
     }
 
-    // Reset flags when either Ctrl key is released
+    // Reset individual flags when a Ctrl key is released
     if (event.code === 'ControlLeft') {
         isLeftCtrlPressed = false;
     } else if (event.code === 'ControlRight') {
         isRightCtrlPressed = false;
     }
 
-    // Handle Space key as usual
+    // Handle Space key
     if (event.key === ' ') {
         event.preventDefault(); // Prevent scrolling
         if (startButton.style.display !== 'none') {
