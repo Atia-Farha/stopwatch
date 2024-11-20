@@ -100,6 +100,13 @@ document.addEventListener('keydown', (event) => {
     const lapButton = document.getElementById('lap');
 
     switch (event.key) {
+        case ' ': // Stop button
+            event.preventDefault(); // Prevent default browser behavior
+            if (stopButton.style.display !== 'none') {
+                stopStopwatch();
+            }
+            break;
+
         case 'Enter': // Reset button
             if (resetButton.style.display !== 'none') {
                 resetStopwatch();
@@ -109,13 +116,6 @@ document.addEventListener('keydown', (event) => {
         case 'Shift': // Lap button
             if (lapButton.style.display !== 'none') {
                 lapTime();
-            }
-            break;
-
-        case ' ': // Stop button
-            event.preventDefault(); // Prevent default browser behavior
-            if (stopButton.style.display !== 'none') {
-                stopStopwatch();
             }
             break;
 
