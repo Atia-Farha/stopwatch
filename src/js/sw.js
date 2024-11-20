@@ -1,4 +1,4 @@
-const CACHE_NAME = 'stopwatch-cache-v1';
+const CACHE_NAME = 'stopwatch-pwa-v1';
 const ASSETS = [
   './',
   './index.html',
@@ -15,23 +15,22 @@ const ASSETS = [
   './icons/icon-512x512.png'
 ];
 
-// Install event - cache the app shell
-self.addEventListener('install', event => {
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
+    caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(ASSETS);
     })
   );
 });
 
-// Activate event - clean up old caches
-self.addEventListener('activate', event => {
+self.addEventListener('activate', (event) => {
+  const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
-    caches.keys().then(cacheNames => {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map(cache => {
-          if (cache !== CACHE_NAME) {
-            return caches.delete(cache);
+        cacheNames.map((cacheName) => {
+          if (!cacheWhitelist.includes(cacheName)) {
+            return caches.delete(cacheName);
           }
         })
       );
@@ -39,11 +38,10 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch event - serve cached resources
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
+    caches.match(event.request).then((cachedResponse) => {
+      return cachedResponse || fetch(event.request);
     })
   );
 });
