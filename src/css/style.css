@@ -55,9 +55,11 @@ body {
   0% {
     box-shadow: 0 0 90px rgba(146, 0, 225, 0.85);
   }
+
   50% {
     box-shadow: 0 0 15px rgba(146, 0, 225, 0.85);
   }
+
   100% {
     box-shadow: 0 0 90px rgba(146, 0, 225, 0.85);
   }
