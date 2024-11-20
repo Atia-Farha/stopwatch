@@ -100,7 +100,7 @@ document.addEventListener('keydown', (event) => {
     const resetButton = document.getElementById('reset');
     const lapButton = document.getElementById('lap');
 
-    // Handle Reset (Enter key)
+    // Handle Reset (Enter key) immediately
     if (event.key === 'Enter') {
         event.preventDefault(); // Prevent default behavior (e.g., form submission)
         if (resetButton.style.display !== 'none') {
@@ -108,7 +108,7 @@ document.addEventListener('keydown', (event) => {
         }
     }
 
-    // Handle Lap (Shift key)
+    // Handle Lap (Shift key) immediately
     if (event.key === 'Shift') {
         if (lapButton.style.display !== 'none') {
             lapTime();
