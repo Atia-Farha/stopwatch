@@ -94,32 +94,39 @@ function updateTime() {
     document.getElementById('time').textContent = timeString;
 }
 
-document.addEventListener('keyup', (event) => {
-    // Ensure the correct element visibility check
-    const startButton = document.getElementById('start');
-    const stopButton = document.getElementById('stop');
+document.addEventListener('keydown', (event) => {
     const resetButton = document.getElementById('reset');
     const lapButton = document.getElementById('lap');
 
     switch (event.key) {
-        case ' ': // Space key
-            event.preventDefault(); // Prevent default browser behavior (e.g., scrolling)
-            if (startButton.style.display !== 'none') {
-                startStopwatch(); // Start stopwatch if "Start" is visible
-            } else if (stopButton.style.display !== 'none') {
-                stopStopwatch(); // Stop stopwatch if "Stop" is visible
-            }
-            break;
-
         case 'Enter': // Enter key
             if (resetButton.style.display !== 'none') {
-                resetStopwatch(); // Reset stopwatch if "Reset" is visible
+                resetStopwatch();
             }
             break;
 
         case 'Shift': // Shift key
             if (lapButton.style.display !== 'none') {
-                lapTime(); // Record lap time if "Lap" is visible
+                lapTime();
+            }
+            break;
+
+        default:
+            break;
+    }
+});
+
+document.addEventListener('keyup', (event) => {
+    const startButton = document.getElementById('start');
+    const stopButton = document.getElementById('stop');
+
+    switch (event.key) {
+        case ' ': // Space key
+            event.preventDefault(); // Prevent default browser behavior (e.g., scrolling)
+            if (startButton.style.display !== 'none') {
+                startStopwatch();
+            } else if (stopButton.style.display !== 'none') {
+                stopStopwatch();
             }
             break;
 
