@@ -94,59 +94,36 @@ function updateTime() {
     document.getElementById('time').textContent = timeString;
 }
 
-let keyActionHandled = {}; // Tracks if a key's action has been handled
-
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keyup', (event) => {
+    // Ensure the correct element visibility check
+    const startButton = document.getElementById('start');
     const stopButton = document.getElementById('stop');
     const resetButton = document.getElementById('reset');
     const lapButton = document.getElementById('lap');
 
-    // If this key's action was already handled, ignore
-    if (keyActionHandled[event.key]) return;
-
-    // Mark key as handled to block its `keyup` action
-    keyActionHandled[event.key] = true;
-
     switch (event.key) {
-        case ' ': // Stop button
-            event.preventDefault();
-            if (stopButton.style.display !== 'none') {
-                stopStopwatch();
+        case ' ': // Space key
+            event.preventDefault(); // Prevent default browser behavior (e.g., scrolling)
+            if (startButton.style.display !== 'none') {
+                startStopwatch(); // Start stopwatch if "Start" is visible
+            } else if (stopButton.style.display !== 'none') {
+                stopStopwatch(); // Stop stopwatch if "Stop" is visible
             }
             break;
 
-        case 'Enter': // Reset button
-            event.preventDefault();
+        case 'Enter': // Enter key
             if (resetButton.style.display !== 'none') {
-                resetStopwatch();
+                resetStopwatch(); // Reset stopwatch if "Reset" is visible
             }
             break;
 
-        case 'Shift': // Lap button
-            event.preventDefault();
+        case 'Shift': // Shift key
             if (lapButton.style.display !== 'none') {
-                lapTime();
+                lapTime(); // Record lap time if "Lap" is visible
             }
             break;
 
         default:
             break;
-    }
-});
-
-document.addEventListener('keyup', (event) => {
-    const startButton = document.getElementById('start');
-
-    // If the key was already handled in `keydown`, don't handle `keyup`
-    if (!keyActionHandled[event.key]) return;
-
-    // Reset the key to allow it to trigger actions again in the future
-    keyActionHandled[event.key] = false;
-
-    if (event.key === ' ') {
-        event.preventDefault();
-        if (startButton.style.display !== 'none') {
-            startStopwatch();
-        }
     }
 });
