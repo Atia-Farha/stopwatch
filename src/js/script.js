@@ -54,7 +54,7 @@ function lapTime() {
     }
     const lapTimeString = document.getElementById('time').textContent;
     const lapDiv = document.createElement('div');
-    lapDiv.innerHTML = `<span class="lapCounter">Lap - ${lapCounter++}</span><span class="lapTime">${lapTimeString}</span>`;
+    lapDiv.innerHTML = `<p class="animate__animated animate__slideInRight animate__fast"><span class="lapCounter">Lap - ${lapCounter++}</span><span class="lapTime">${lapTimeString}</span></p>`;
     document.getElementById('laps').prepend(lapDiv);
 
     const lapsBox = document.getElementById('lapsBox');
