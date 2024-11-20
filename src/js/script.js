@@ -94,36 +94,41 @@ function updateTime() {
     document.getElementById('time').textContent = timeString;
 }
 
-document.addEventListener('keyup', (event) => {
-    // Ensure the correct element visibility check
-    const startButton = document.getElementById('start');
+document.addEventListener('keydown', (event) => {
     const stopButton = document.getElementById('stop');
     const resetButton = document.getElementById('reset');
     const lapButton = document.getElementById('lap');
 
     switch (event.key) {
-        case ' ': // Space key
-            event.preventDefault(); // Prevent default browser behavior (e.g., scrolling)
-            if (startButton.style.display !== 'none') {
-                startStopwatch(); // Start stopwatch if "Start" is visible
-            } else if (stopButton.style.display !== 'none') {
-                stopStopwatch(); // Stop stopwatch if "Stop" is visible
-            }
-            break;
-
-        case 'Enter': // Enter key
+        case 'Enter': // Reset button
             if (resetButton.style.display !== 'none') {
-                resetStopwatch(); // Reset stopwatch if "Reset" is visible
+                resetStopwatch();
             }
             break;
 
-        case 'Shift': // Shift key
+        case 'Shift': // Lap button
             if (lapButton.style.display !== 'none') {
-                lapTime(); // Record lap time if "Lap" is visible
+                lapTime();
+            }
+            break;
+
+        case ' ': // Stop button
+            event.preventDefault(); // Prevent default browser behavior
+            if (stopButton.style.display !== 'none') {
+                stopStopwatch();
             }
             break;
 
         default:
             break;
+    }
+});
+
+document.addEventListener('keyup', (event) => {
+    const startButton = document.getElementById('start');
+
+    if (event.key === ' ' && startButton.style.display !== 'none') { // Start button
+        event.preventDefault(); // Prevent default browser behavior
+        startStopwatch();
     }
 });
