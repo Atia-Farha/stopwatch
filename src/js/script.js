@@ -94,25 +94,14 @@ function updateTime() {
     document.getElementById('time').textContent = timeString;
 }
 
+let isLeftCtrlPressed = false;
+let isRightCtrlPressed = false;
+
 document.addEventListener('keydown', (event) => {
-    const resetButton = document.getElementById('reset');
-    const lapButton = document.getElementById('lap');
-
-    switch (event.key) {
-        case 'Enter': // Enter key
-            if (resetButton.style.display !== 'none') {
-                resetStopwatch();
-            }
-            break;
-
-        case 'Shift': // Shift key
-            if (lapButton.style.display !== 'none') {
-                lapTime();
-            }
-            break;
-
-        default:
-            break;
+    if (event.code === 'ControlLeft') {
+        isLeftCtrlPressed = true;
+    } else if (event.code === 'ControlRight') {
+        isRightCtrlPressed = true;
     }
 });
 
@@ -120,17 +109,29 @@ document.addEventListener('keyup', (event) => {
     const startButton = document.getElementById('start');
     const stopButton = document.getElementById('stop');
 
-    switch (event.key) {
-        case ' ': // Space key
-            event.preventDefault(); // Prevent default browser behavior (e.g., scrolling)
-            if (startButton.style.display !== 'none') {
-                startStopwatch();
-            } else if (stopButton.style.display !== 'none') {
-                stopStopwatch();
-            }
-            break;
+    // Trigger when both Ctrl keys are released simultaneously
+    if (isLeftCtrlPressed && isRightCtrlPressed && event.code === 'ControlRight') {
+        if (startButton.style.display !== 'none') {
+            startStopwatch();
+        } else if (stopButton.style.display !== 'none') {
+            stopStopwatch();
+        }
+    }
 
-        default:
-            break;
+    // Reset flags when either Ctrl key is released
+    if (event.code === 'ControlLeft') {
+        isLeftCtrlPressed = false;
+    } else if (event.code === 'ControlRight') {
+        isRightCtrlPressed = false;
+    }
+
+    // Handle Space key as usual
+    if (event.key === ' ') {
+        event.preventDefault(); // Prevent scrolling
+        if (startButton.style.display !== 'none') {
+            startStopwatch();
+        } else if (stopButton.style.display !== 'none') {
+            stopStopwatch();
+        }
     }
 });
