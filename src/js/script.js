@@ -94,14 +94,11 @@ function updateTime() {
     document.getElementById('time').textContent = timeString;
 }
 
-let isLeftCtrlPressed = false;
-let isRightCtrlPressed = false;
+let ctrlKeysPressed = new Set();
 
 document.addEventListener('keydown', (event) => {
-    if (event.code === 'ControlLeft') {
-        isLeftCtrlPressed = true;
-    } else if (event.code === 'ControlRight') {
-        isRightCtrlPressed = true;
+    if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
+        ctrlKeysPressed.add(event.code);
     }
 });
 
@@ -109,25 +106,18 @@ document.addEventListener('keyup', (event) => {
     const startButton = document.getElementById('start');
     const stopButton = document.getElementById('stop');
 
-    // Check if both Ctrl keys were pressed and released
-    if (isLeftCtrlPressed && isRightCtrlPressed) {
-        if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
-            if (startButton.style.display !== 'none') {
-                startStopwatch();
-            } else if (stopButton.style.display !== 'none') {
-                stopStopwatch();
-            }
-            // Reset flags after action
-            isLeftCtrlPressed = false;
-            isRightCtrlPressed = false;
-        }
+    // Remove the key from the set when released
+    if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
+        ctrlKeysPressed.delete(event.code);
     }
 
-    // Reset individual flags when a Ctrl key is released
-    if (event.code === 'ControlLeft') {
-        isLeftCtrlPressed = false;
-    } else if (event.code === 'ControlRight') {
-        isRightCtrlPressed = false;
+    // Check if both keys were pressed and released
+    if (!ctrlKeysPressed.size && (event.code === 'ControlLeft' || event.code === 'ControlRight')) {
+        if (startButton.style.display !== 'none') {
+            startStopwatch();
+        } else if (stopButton.style.display !== 'none') {
+            stopStopwatch();
+        }
     }
 
     // Handle Space key
