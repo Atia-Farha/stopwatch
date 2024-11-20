@@ -95,18 +95,27 @@ function updateTime() {
 }
 
 let deferredPrompt;
-window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent the mini-infobar from appearing on mobile
-    e.preventDefault();
+
+window.addEventListener('beforeinstallprompt', (event) => {
+    // Prevent the default prompt
+    event.preventDefault();
     // Save the event to trigger later
-    deferredPrompt = e;
-    
-    // Optionally, show some UI to notify users that they can install the app (without custom button)
-    console.log('PWA install prompt available!');
+    deferredPrompt = event;
+    // Optionally, you can trigger your own button here, or leave it to the default prompt
 });
 
-// Listen for the user to click on the install prompt (if it was deferred)
-window.addEventListener('appinstalled', (e) => {
-    // Log the successful installation
-    console.log('PWA was installed');
-});
+// Trigger the install prompt when needed
+function showInstallPrompt() {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice
+            .then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the A2HS prompt');
+                } else {
+                    console.log('User dismissed the A2HS prompt');
+                }
+                deferredPrompt = null;
+            });
+    }
+}
