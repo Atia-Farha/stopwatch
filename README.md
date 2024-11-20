@@ -1,8 +1,8 @@
 # Stopwatch Website
 
-A minimalistic and functional online stopwatch with lap time recording and an animated display. Perfect for timing events, workouts, and more. 
+A sleek, minimalistic and functional stopwatch with lap time recording and animations with PWA(Progressive Web App) support. Perfect for timing events, workouts, and more. 
 
-![Preview](/assets/link-img.png)
+![Preview](/assets/preview.png)
 
 ## Table of Contents
 
@@ -10,21 +10,36 @@ A minimalistic and functional online stopwatch with lap time recording and an an
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Usage](#usage)
+- [Keyboard Shortcuts For Buttons](#keyboard-shortcuts-for-buttons)
 - [Reporting Issues](#reporting-issues)
 
 ## Project Structure
 
 ```plaintext
-stopwatch/
-├── index.html              # Main HTML file
-├── style.css               # CSS styles
-├── script.js               # JavaScript functionality
-├── assets/                 # Asset files
-│   ├── favicon.png         # Favicon
-│   ├── link-img.png        # Link Preview Image
-│   └── page-preview.png    # Page Preview Image
-├── README.md               # Project documentation
-└── LICENSE                 # License File
+stopwatch/                 # Root directory
+├── index.html             # Main HTML file
+├── src/                   # Source code directory
+│   ├── css/               # Directory for stylesheets
+│   │   └── style.css      # Main CSS file for styling
+│   └── js/                # Directory for JavaScript files
+│       ├── script.js      # Core JavaScript file
+│       └── sw.js          # Service Worker script for PWA
+├── manifest.json          # Web App Manifest for PWA configuration
+├── assets/                # Directory for static assets
+│   ├── favicon.png
+│   ├── link-preview.png
+│   └── screenshot.png
+├── icons/                 # Directory for app icons in various sizes
+│   ├── icon-72x72.png
+│   ├── icon-96x96.png
+│   ├── icon-128x128.png
+│   ├── icon-144x144.png
+│   ├── icon-152x152.png
+│   ├── icon-192x192.png
+│   ├── icon-384x384.png
+│   └── icon-512x512.png
+├── README.md              # Project documentation
+└── LICENSE                # License file
 ```
 
 ## Technologies Used
@@ -32,14 +47,17 @@ stopwatch/
 - HTML
 - CSS
 - JavaScript
+- PWA (Progressive Web App)
 
 ## Features
 
-- **Start, Stop, Reset:** Control the stopwatch with intuitive buttons.
+- **Start, Stop, Reset:** Control the stopwatch by intuitive buttons with keyboard shortcuts.
 - **Lap Times:** Record multiple lap times.
-- **Animated Display:** Visual feedback with animation effects.
+- **Animations:** Visual feedback with animation effects for buttons and display.
+- **PWA Installation:** Install the stopwatch as an app on your device.
+- **Offline Support:** Offline support on PWA.
 
-![Preview](/assets/page-preview.png)
+![Preview](/assets/screenshot.png)
 
 ## Usage
 
@@ -49,7 +67,12 @@ stopwatch/
 4. Click the stop button to stop the timer.
 5. Click the reset button to reset the stopwatch.
 
-*Ensure you have installed a web browser (Chrome, Firefox, etc.) on your device.
+*Ensure that you already have an installed web browser (Chrome, Firefox, etc.) on your device.
+
+## Keyboard Shortcuts for Buttons:
+- **Start** & **Stop**: `Spacebar` or `CTRL + CTRL`
+- **Lap**: `Shift`
+- **Reset**: `Enter`
 
 ## Reporting Issues
 
