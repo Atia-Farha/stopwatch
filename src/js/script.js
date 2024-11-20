@@ -94,7 +94,7 @@ function updateTime() {
     document.getElementById('time').textContent = timeString;
 }
 
-let spaceKeyPressed = false; // Flag to track if the Space key is pressed
+let spaceKeyHandled = false; // Tracks whether the Space key has already triggered an action
 
 document.addEventListener('keydown', (event) => {
     const stopButton = document.getElementById('stop');
@@ -103,9 +103,9 @@ document.addEventListener('keydown', (event) => {
 
     switch (event.key) {
         case ' ': // Stop button
-            event.preventDefault(); // Prevent default browser behavior
-            if (!spaceKeyPressed) { // Only trigger once per key press
-                spaceKeyPressed = true;
+            if (!spaceKeyHandled) {
+                spaceKeyHandled = true; // Mark the key press as handled
+                event.preventDefault();
                 if (stopButton.style.display !== 'none') {
                     stopStopwatch();
                 }
@@ -113,12 +113,14 @@ document.addEventListener('keydown', (event) => {
             break;
 
         case 'Enter': // Reset button
+            event.preventDefault();
             if (resetButton.style.display !== 'none') {
                 resetStopwatch();
             }
             break;
 
         case 'Shift': // Lap button
+            event.preventDefault();
             if (lapButton.style.display !== 'none') {
                 lapTime();
             }
@@ -133,10 +135,10 @@ document.addEventListener('keyup', (event) => {
     const startButton = document.getElementById('start');
 
     if (event.key === ' ') {
-        event.preventDefault(); // Prevent default browser behavior
-        spaceKeyPressed = false; // Reset the flag on key release
-        if (startButton.style.display !== 'none') {
+        event.preventDefault();
+        if (!spaceKeyHandled && startButton.style.display !== 'none') {
             startStopwatch();
         }
+        spaceKeyHandled = false; // Reset the flag on key release
     }
 });
