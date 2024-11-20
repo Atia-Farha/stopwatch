@@ -94,18 +94,18 @@ function updateTime() {
     document.getElementById('time').textContent = timeString;
 }
 
-let keyPressed = {}; // Object to track keys currently pressed and handled
+let keyActionHandled = {}; // Tracks if a key's action has been handled
 
 document.addEventListener('keydown', (event) => {
     const stopButton = document.getElementById('stop');
     const resetButton = document.getElementById('reset');
     const lapButton = document.getElementById('lap');
 
-    if (keyPressed[event.key]) {
-        return; // If the key has already triggered an action, ignore further `keydown` actions
-    }
+    // If this key's action was already handled, ignore
+    if (keyActionHandled[event.key]) return;
 
-    keyPressed[event.key] = true; // Mark the key as pressed and handled
+    // Mark key as handled to block its `keyup` action
+    keyActionHandled[event.key] = true;
 
     switch (event.key) {
         case ' ': // Stop button
@@ -137,11 +137,11 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('keyup', (event) => {
     const startButton = document.getElementById('start');
 
-    if (!keyPressed[event.key]) {
-        return; // If the key hasn't triggered `keydown`, ignore this `keyup` action
-    }
+    // If the key was already handled in `keydown`, don't handle `keyup`
+    if (!keyActionHandled[event.key]) return;
 
-    keyPressed[event.key] = false; // Reset the key's state
+    // Reset the key to allow it to trigger actions again in the future
+    keyActionHandled[event.key] = false;
 
     if (event.key === ' ') {
         event.preventDefault();
