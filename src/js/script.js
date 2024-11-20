@@ -93,3 +93,20 @@ function updateTime() {
 
     document.getElementById('time').textContent = timeString;
 }
+
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the mini-infobar from appearing on mobile
+    e.preventDefault();
+    // Save the event to trigger later
+    deferredPrompt = e;
+    
+    // Optionally, show some UI to notify users that they can install the app (without custom button)
+    console.log('PWA install prompt available!');
+});
+
+// Listen for the user to click on the install prompt (if it was deferred)
+window.addEventListener('appinstalled', (e) => {
+    // Log the successful installation
+    console.log('PWA was installed');
+});
