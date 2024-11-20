@@ -24,7 +24,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 14em 1em 2em 1em;
+  margin: 3.5em 1em 2em 1em;
 }
 
 /* Styling for the stopwatch circle */
@@ -41,7 +41,7 @@ body {
   text-align: center;
   margin-bottom: 20px;
   background-color: rgb(25, 25, 25);
-  box-shadow: 0 0 90px rgba(146, 0, 225, 0.85);
+  box-shadow: 0 0 80px rgba(146, 0, 225, 0.85);
 }
 
 /* Styling for the time digits */
@@ -58,7 +58,7 @@ body {
 /* Keyframes for the box shadow animation */
 @keyframes boxShadowAnimation {
   0% {
-    box-shadow: 0 0 90px rgba(146, 0, 225, 0.85);
+    box-shadow: 0 0 80px rgba(146, 0, 225, 0.85);
   }
 
   50% {
@@ -66,7 +66,7 @@ body {
   }
 
   100% {
-    box-shadow: 0 0 90px rgba(146, 0, 225, 0.85);
+    box-shadow: 0 0 80px rgba(146, 0, 225, 0.85);
   }
 }
 
