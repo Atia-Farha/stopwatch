@@ -126,9 +126,11 @@ document.addEventListener('keydown', (event) => {
 
 document.addEventListener('keyup', (event) => {
     const startButton = document.getElementById('start');
+    const stopButton = document.getElementById('stop');
 
-    if (event.key === ' ' && startButton.style.display !== 'none') { // Start button
-        event.preventDefault(); // Prevent default browser behavior
+    if (event.key === ' ' && stopButton.style.display === 'none' && startButton.style.display !== 'none') {
+        // Trigger Start only if Stop button is not visible
+        event.preventDefault();
         startStopwatch();
     }
 });
