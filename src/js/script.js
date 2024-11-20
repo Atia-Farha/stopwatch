@@ -95,6 +95,7 @@ function updateTime() {
 }
 
 document.addEventListener('keyup', (event) => {
+    // Ensure the correct element visibility check
     const startButton = document.getElementById('start');
     const stopButton = document.getElementById('stop');
     const resetButton = document.getElementById('reset');
@@ -104,21 +105,21 @@ document.addEventListener('keyup', (event) => {
         case ' ': // Space key
             event.preventDefault(); // Prevent default browser behavior (e.g., scrolling)
             if (startButton.style.display !== 'none') {
-                startStopwatch();
+                startStopwatch(); // Start stopwatch if "Start" is visible
             } else if (stopButton.style.display !== 'none') {
-                stopStopwatch();
+                stopStopwatch(); // Stop stopwatch if "Stop" is visible
             }
             break;
 
         case 'Enter': // Enter key
             if (resetButton.style.display !== 'none') {
-                resetStopwatch();
+                resetStopwatch(); // Reset stopwatch if "Reset" is visible
             }
             break;
 
         case 'Shift': // Shift key
             if (lapButton.style.display !== 'none') {
-                lapTime();
+                lapTime(); // Record lap time if "Lap" is visible
             }
             break;
 
