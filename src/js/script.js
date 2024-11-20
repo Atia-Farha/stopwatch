@@ -93,29 +93,3 @@ function updateTime() {
 
     document.getElementById('time').textContent = timeString;
 }
-
-let deferredPrompt;
-
-window.addEventListener('beforeinstallprompt', (event) => {
-    // Prevent the default prompt
-    event.preventDefault();
-    // Save the event to trigger later
-    deferredPrompt = event;
-    // Optionally, you can trigger your own button here, or leave it to the default prompt
-});
-
-// Trigger the install prompt when needed
-function showInstallPrompt() {
-    if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice
-            .then((choiceResult) => {
-                if (choiceResult.outcome === 'accepted') {
-                    console.log('User accepted the A2HS prompt');
-                } else {
-                    console.log('User dismissed the A2HS prompt');
-                }
-                deferredPrompt = null;
-            });
-    }
-}
