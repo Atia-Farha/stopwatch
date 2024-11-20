@@ -136,7 +136,7 @@ hr {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 2.5em;
 }
 
 /* Styling for buttons */
