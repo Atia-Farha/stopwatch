@@ -118,8 +118,6 @@ hr {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  animation: slideInRight;
-  animate-duration: 800ms;
 }
 
 .lapCounter,
