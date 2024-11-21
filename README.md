@@ -76,7 +76,6 @@ stopwatch/                  # Root directory
 
 ## Reporting Issues
 
-If you encounter any functional issue, screen adjustment issue, or complaint about the design, please let me know in the 'Issues' section. I will make every effort to fix it as quickly as possible.
-
+If you encounter any bugs or have suggestions for improvement, please report them in the 'Issues' section of the GitHub repository. I will address them promptly.
 
 <p align="center">© Designed and developed by Atia Farha | ALL RIGHTS RESERVED</p>
