@@ -78,6 +78,7 @@ hr {
 
 /* Container for lap times */
 .lapsBox {
+  flex: 1;
   display: none;
   width: 100vw;
   overflow-y: auto;
@@ -104,7 +105,7 @@ hr {
 }
 
 /* Styling for each lap time */
-.laps div {
+.laps div p{
   background-color: #333333;
   color: white;
   padding: 10px;
