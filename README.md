@@ -61,7 +61,7 @@ stopwatch/                  # Root directory
 
 ## Usage
 
-1. Simply open <a href="https://atia-farha.github.io/stopwatch/" target="_blank">this link</a>
+1. Simply open <a href="https://atia-farha.github.io/stopwatch/" target="_blank">this link</a>.
 2. Click the start button to start timing.
 3. Click the lap button to record lap times.
 4. Click the stop button to stop the timer.
