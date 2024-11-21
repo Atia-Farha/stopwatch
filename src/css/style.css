@@ -1,7 +1,9 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  font-family: Arial, sans-serif;
 }
 
 /* Overall body styling */
@@ -12,7 +14,6 @@ body {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  font-family: Arial, sans-serif;
   background-color: rgb(25, 25, 25);
 }
 
@@ -22,7 +23,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 3em 1em 2em 1em;
+  margin: 3.5em 1em 2em 1em;
 }
 
 /* Styling for the stopwatch circle */
@@ -39,7 +40,7 @@ body {
   text-align: center;
   margin-bottom: 20px;
   background-color: rgb(25, 25, 25);
-  box-shadow: 0 0 90px rgba(146, 0, 225, 0.85);
+  box-shadow: 0 0 80px rgba(146, 0, 225, 0.85);
 }
 
 /* Styling for the time digits */
@@ -56,14 +57,16 @@ body {
 /* Keyframes for the box shadow animation */
 @keyframes boxShadowAnimation {
   0% {
-    box-shadow: 0 0 90px rgba(146, 0, 225, 0.85);
+  box-shadow: 0 0 80px rgba(146, 0, 225, 0.85);
   }
+  
   50% {
-    box-shadow: 0 0 15px rgba(146, 0, 225, 0.85);
+  box-shadow: 0 0 15px rgba(146, 0, 225, 0.85);
   }
+  
   100% {
-    box-shadow: 0 0 90px rgba(146, 0, 225, 0.85);
-  }
+  box-shadow: 0 0 80px rgba(146, 0, 225, 0.85);
+}
 }
 
 /* Styling for horizontal lines */
