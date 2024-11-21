@@ -80,7 +80,6 @@ hr {
 
 /* Container for lap times */
 .lapsBox {
-  flex: 1;
   display: none;
   width: 100vw;
   overflow-y: auto;
@@ -136,7 +135,7 @@ hr {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 2.5em;
+  gap: 3em;
 }
 
 /* Styling for buttons */
