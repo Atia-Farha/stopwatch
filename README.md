@@ -27,7 +27,7 @@ stopwatch/                  # Root directory
 ├── manifest.json          # Web App Manifest for PWA configuration
 ├── assets/                # Directory for static assets
 │   ├── favicon.png
-│   ├── link-preview.png
+│   ├── preview.png
 │   └── screenshot.png
 ├── icons/                 # Directory for app icons in various sizes
 │   ├── icon-72x72.png
