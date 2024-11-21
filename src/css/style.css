@@ -30,8 +30,8 @@ body {
 .circle {
   width: 70vw;
   height: 70vw;
-  max-width: 18em;
-  max-height: 18em;
+  max-width: 20em;
+  max-height: 20em;
   border-radius: 50%;
   background-color: #4CAF50;
   display: flex;
