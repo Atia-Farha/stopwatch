@@ -78,4 +78,5 @@ stopwatch/                  # Root directory
 
 If you encounter any bugs or have suggestions for improvement, please report them in the <a href="https://github.com/Atia-Farha/stopwatch/issues" target="_blank">Issues</a> section of this GitHub repository. I will address them promptly.
 
-<p align="center">© Designed and developed by Atia Farha | ALL RIGHTS RESERVED</p>
+
+<p align="center">© Designed and developed by [Atia Farha](https://github.com/Atia-Farha) | ALL RIGHTS RESERVED</p>
