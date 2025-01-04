@@ -67,7 +67,7 @@ stopwatch/                  # Root directory
 4. Click the stop button to stop the timer.
 5. Click the reset button to reset the stopwatch.
 
-*Ensure that you already have an installed web browser (Chrome, Firefox, etc.) on your device.
+> Ensure that you already have an installed web browser (Chrome, Firefox, etc.) on your device.
 
 ## Keyboard Shortcuts for Buttons:
 - **Start** & **Stop**: `Spacebar` or `CTRL + CTRL`
