@@ -4,6 +4,7 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   font-family: Arial, sans-serif;
+  padding: env(safe-area-inset);
 }
 
 /* Overall body styling */
